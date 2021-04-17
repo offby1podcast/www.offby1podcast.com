@@ -1,0 +1,19 @@
+%c-site-logo {
+	padding: 1.5rem 1rem;
+
+	a {
+		color: black;
+		text-decoration: none;
+
+		span {
+			color: #aaa;
+		}
+
+		&:hover {
+			span {
+				text-decoration: underline;
+				text-decoration-thickness: 3px;
+			}
+		}
+	}
+}

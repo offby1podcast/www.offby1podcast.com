@@ -1,0 +1,15 @@
+%c-podcast-links {
+	display: flex;
+	flex-wrap: wrap;
+	list-style-type: none;
+	padding: 0;
+
+	a {
+		display: block;
+		padding: 0 1rem;
+	}
+}
+
+.c-podcast-links {
+	@extend %c-podcast-links;
+}

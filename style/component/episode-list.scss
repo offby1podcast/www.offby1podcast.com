@@ -1,0 +1,40 @@
+%c-episode-list {
+	@extend %d-readable;
+	display: block;
+
+	h1 {
+		padding: 0 1rem;
+	}
+
+	ol {
+		list-style-type: none;
+		padding: 0 0.5rem;
+
+		li {
+			outline: 4px double black;
+			margin: 2rem 0;
+
+			>a {
+				display: block;
+				padding: 0.5rem;
+				color: black;
+				text-decoration: none;
+
+				&:hover {
+					h2 {
+						text-decoration: underline;
+					}
+				}
+			}
+		}
+	}
+
+	time {
+		display: block;
+		margin-bottom: 1.5rem;
+	}
+}
+
+.c-episode-list {
+	@extend %c-episode-list;
+}

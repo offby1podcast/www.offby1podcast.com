@@ -1,0 +1,32 @@
+@import "font/fira-code";
+@import "variable/break";
+@import "decoration/readable";
+@import "component/episode-list";
+@import "component/podcast-links";
+@import "component/site-logo";
+@import "component/site-nav";
+@import "page/_common";
+@import "page/index";
+
+html {
+	font-size: 18px;
+	min-width: 18rem;
+	line-height: 1.5;
+	font-family: "Fira Code", monospace;
+
+	@media(min-width: $break-small) {
+		font-size: 20px;
+	}
+	@media(min-width: $break-medium) {
+		font-size: 26px;
+	}
+	@media(min-width: $break-large) {
+		font-size: 36px;
+	}
+}
+
+* {
+	font-size: 1rem;
+	margin: 0;
+	padding: 0;
+}

@@ -1,0 +1,41 @@
+%c-site-nav {
+	@media(min-width: $break-small) {
+		position: absolute;
+		top: 0;
+		right: 0;
+	}
+
+	ul {
+		list-style-type: none;
+
+		@media(min-width: $break-small) {
+			display: flex;
+		}
+
+		>li {
+			>a {
+				display: block;
+				padding: 0 1rem;
+				font-weight: bold;
+				color: #aaa;
+				text-decoration: none;
+
+				@media(min-width: $break-small) {
+					padding: 1.5rem 1rem;
+				}
+
+				@media(max-width: $break-small) {
+					&::before {
+						content: "// ";
+						padding-left: 6rem;
+					}
+				}
+
+				&:hover {
+					text-decoration: underline;
+					text-decoration-thickness: 3px;
+				}
+			}
+		}
+	}
+}

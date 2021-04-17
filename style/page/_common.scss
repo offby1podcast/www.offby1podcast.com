@@ -1,0 +1,23 @@
+body {
+	>header {
+		@extend %d-readable;
+		position: relative;
+
+		>h1 {
+			@extend %c-site-logo;
+		}
+
+		>nav {
+			@extend %c-site-nav;
+		}
+	}
+
+	>footer {
+		margin-top: 4rem;
+		background: #eee;
+
+		p {
+			padding: 2rem 1rem;
+		}
+	}
+}
