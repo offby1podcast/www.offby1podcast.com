@@ -1,0 +1,14 @@
+body.uri--contact {
+	section {
+		dl {
+			dt {
+				float: left;
+
+				&::after {
+					content: ": ";
+					margin-right: 1rem;
+				}
+			}
+		}
+	}
+}

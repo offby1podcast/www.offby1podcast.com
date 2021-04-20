@@ -14,10 +14,18 @@ body {
 
 	>footer {
 		margin-top: 4rem;
-		background: #eee;
+		border-top: 4px solid #eee;
 
 		p {
 			padding: 2rem 1rem;
+		}
+	}
+
+	>main {
+		>section {
+			h1 {
+				margin: 1.5rem 0;
+			}
 		}
 	}
 }

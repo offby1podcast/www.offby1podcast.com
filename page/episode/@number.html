@@ -1,0 +1,9 @@
+<article>
+	<h1><span data-bind:text="number">000</span>: <span data-bind:text="title">Episode title here</span></h1>
+	<time data-bind:text="release-date-friendly" data-bind:datetime="release-date">1st January 2021</time>
+	<p data-bind:text="intro">Episode intro here.</p>
+
+	<podcast-player />
+
+	<div data-bind:html="content" class="content">Episode HTML content here.</div>
+</article>

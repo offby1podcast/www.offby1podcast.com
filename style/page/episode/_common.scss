@@ -1,0 +1,19 @@
+body.dir--episode {
+	article {
+		>* {
+			margin: 1.5rem 1rem;
+		}
+
+		>p {
+			@extend %d-readable;
+		}
+
+		>.content {
+			@extend %d-readable;
+
+			>* {
+				margin: 1.5rem 0;
+			}
+		}
+	}
+}

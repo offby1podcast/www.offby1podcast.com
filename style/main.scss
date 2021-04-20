@@ -5,8 +5,11 @@
 @import "component/podcast-links";
 @import "component/site-logo";
 @import "component/site-nav";
-@import "page/_common";
+@import "page/common";
 @import "page/index";
+@import "page/contact";
+@import "page/links";
+@import "page/episode/_common";
 
 html {
 	font-size: 18px;
@@ -14,14 +17,19 @@ html {
 	line-height: 1.5;
 	font-family: "Fira Code", monospace;
 
+	transition: font-size 0.5s ease-in-out, margin-left 0.25s ease-in-out;
+
 	@media(min-width: $break-small) {
 		font-size: 20px;
+		margin-left: 2rem;
 	}
 	@media(min-width: $break-medium) {
-		font-size: 26px;
+		font-size: 24px;
+		margin-left: 3rem;
 	}
 	@media(min-width: $break-large) {
-		font-size: 36px;
+		font-size: 26px;
+		margin-left: 4rem;
 	}
 }
 

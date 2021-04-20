@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+	<channel>
+		<title>Off By 1 Podcast</title>
+		<link>https://www.offby1podcast.com</link>
+		<pubDate>Mon, 00 Jan 2021 00:00:00 +0000</pubDate>
+		<copyright>2021 - Off By 1 Podcast</copyright>
+		<description>Join software engineers Jake and Greg in their weekly catchup call, deep diving into various technology and programming topics.</description>
+		<generator>Handwritten by Greg, because he loves the pain of XML.</generator>
+		<language>en</language>
+		<lastBuildDate>Thu, 5 Nov 2020 13:51:29 +0000</lastBuildDate>
+		<image>
+			<link>https://www.offby1podcast.com</link>
+			<title>Off By 1 Podcast</title>
+			<url>https://github.com/offby1podcast/archive/raw/master/img/logo.png</url>
+		</image>
+
+		<itunes:type>episodic</itunes:type>
+		<itunes:subtitle>Join software engineers Jake and Greg in their weekly catchup call, deep diving into various technology and programming topics.</itunes:subtitle>
+		<itunes:author>Jake Lacey, Greg Bowler</itunes:author>
+		<itunes:summary>Join software engineers Jake and Greg in their weekly catchup call, deep diving into various technology and programming topics.</itunes:summary>
+		<itunes:image href="https://github.com/offby1podcast/archive/raw/master/img/logo.png" />
+		<itunes:explicit>no</itunes:explicit>
+		<itunes:keywords>programming, programmer, technology, internet, web, web development, software development, software engineering, computer security, cybersecurity, infosec, catchup</itunes:keywords>
+		<itunes:owner>
+			<itunes:name>Jake Lacey, Greg Bowler</itunes:name>
+			<itunes:email>contact@offby1podcast.com</itunes:email>
+		</itunes:owner>
+		<podcast:locked email="contact@offby1podcast.com">yes</podcast:locked>
+		<itunes:category text="Technology" />
+		<itunes:category text="News">
+			<itunes:category text="Tech News"/>
+		</itunes:category>
+
+		<item>
+			<title>000: Episode Title</title>
+			<link>https://www.offby1podcast.com/000</link>
+			<guid isPermaLink="false">https://www.offby1podcast.com/000.mp3</guid>
+			<pubDate>Mon, 00 Jan 2021 00:00:00 +0000</pubDate>
+			<author>Jake Lacey, Greg Bowler</author>
+			<enclosure url="https://aphid.fireside.fm/d/1437767933/dd3252a8-95c3-41f8-a8a0-9d5d2f9e0bc6/eb063c81-3416-4f1b-ae76-44e9861372c0.mp3" length="49573816" type="audio/mpeg"/>
+			<itunes:episodeType>full</itunes:episodeType>
+			<itunes:author>Jake Lacey, Greg Bowler</itunes:author>
+			<itunes:subtitle>
+				Short episode description. Short episode description. Short episode description. Short episode description.
+			</itunes:subtitle>
+			<itunes:duration>00:00</itunes:duration>
+			<itunes:explicit>no</itunes:explicit>
+			<itunes:image href="https://github.com/offby1podcast/archive/raw/master/img/logo.png"/>
+			<description>
+				Plain text (markdown) version of the show notes.
+			</description>
+			<content:encoded>
+				<p>HTML version of the show notes.</p>
+			</content:encoded>
+			<itunes:summary>
+				<p>HTML version of the show notes.</p>
+			</itunes:summary>
+
+			<podcast:person email="" href="https://twitter.com/jakelacey2012" role="host">Jake Lacey</podcast:person>
+			<podcast:person email="" href="https://github.com/g105b" role="host">Greg Bowler</podcast:person>
+		</item>
+</channel>
+</rss>

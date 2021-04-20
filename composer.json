@@ -1,15 +1,17 @@
 {
-	"name": "offbyonepodcast/www.offbyonepodcast.com",
-	"description": "The Off By One Podcast's website",
+	"name": "offby1podcast/www.offby1podcast.com",
+	"description": "The Off By 1 Podcast's website",
 
 	"require": {
 		"phpgt/webengine": "^3",
-		"league/commonmark": "^1.5.8"
+		"league/commonmark": "^1.5.8",
+		"ext-json": "*",
+		"ext-curl": "*"
 	},
 
 	"autoload": {
 		"psr-4": {
-			"OB1\\": "./class"
+			"OB1\\": "class"
 		}
 	}
 }
