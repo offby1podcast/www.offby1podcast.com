@@ -58,6 +58,18 @@ class Repo {
 		}
 	}
 
+	public function getByteLength(string $url):int {
+		$num = substr($url, strrpos($url, "/") + 1);
+		$num = substr($num, 0, strpos($num, "."));
+		$cacheFile = $this->cacheDir . "/$num.length";
+
+		if(!$this->cacheFileValid($cacheFile)) {
+			$this->httpCacheHeader($url, $cacheFile, "content-length");
+		}
+
+		return trim(file_get_contents($cacheFile));
+	}
+
 	private function cacheFileValid(string $cacheFile):bool {
 		if(!file_exists($cacheFile)) {
 			return false;
@@ -75,5 +87,21 @@ class Repo {
 		curl_setopt($ch, CURLOPT_USERAGENT, "www.offBy1podcast.com episode iterator");
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 		file_put_contents($cacheFile, curl_exec($ch));
+	}
+
+	private function httpCacheHeader(
+		string $url,
+		string $cacheFile,
+		string $header
+	):void {
+		$ch = curl_init($url);
+		curl_setopt($ch, CURLOPT_USERAGENT, "www.offBy1podcast.com episode iterator");
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "HEAD");
+		curl_setopt($ch, CURLOPT_HEADER, true);
+		$response = curl_exec($ch);
+
+// TODO: Store the header value here!
+		file_put_contents($cacheFile, "0");
 	}
 }

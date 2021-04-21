@@ -3,10 +3,10 @@
 	<p>Here's a list of all the links we discuss on-air.</p>
 	<p><a href="?sort=date">Sort by date</a> or <a href="?sort=name">sort by name</a>.</p>
 
-	<ul>
-		<li>
-			<a href="#">Link title</a>
-			<p>Episode <span>0</span> (<time>0th Jan 2021</time>).</p>
+	<ul class="links">
+		<li data-template>
+			<a href="#" data-bind:text="title" data-bind:href="url">Link title</a>
+			<p><span data-bind:text="person">Person</span> shared in episode <span data-bind:text="episode-number">0</span> (<time data-bind:text="release-date-friendly" data-bind:datetime="release-date">0th Jan 2021</time>).</p>
 		</li>
 	</ul>
 </section>

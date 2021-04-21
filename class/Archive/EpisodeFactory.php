@@ -16,7 +16,7 @@ class EpisodeFactory {
 		$title = $this->parseTitle($showNotes);
 		$releaseDate = $this->parseReleaseDate($showNotes);
 		$chapterList = $this->parseChapters($showNotes);
-		$linkList = $this->parseLinks($showNotes);
+		$linkList = $this->parseLinks($showNotes, $episodeNumber, $releaseDate);
 
 		return new Episode(
 			$episodeNumber,
@@ -51,7 +51,7 @@ class EpisodeFactory {
 		$title = $this->parseTitle($showNotes);
 		$releaseDate = $this->parseReleaseDate($showNotes);
 		$chapterList = $this->parseChapters($showNotes);
-		$linkList = $this->parseLinks($showNotes);
+		$linkList = $this->parseLinks($showNotes, $episodeNumber, $releaseDate);
 
 		return new Episode(
 			$episodeNumber,
@@ -99,7 +99,11 @@ class EpisodeFactory {
 		return new ChapterList(...$chaptersArray);
 	}
 
-	public function parseLinks(string $notes):InterestingLinkList {
+	public function parseLinks(
+		string $notes,
+		int $episodeNumber,
+		DateTimeInterface $episodeReleaseDate
+	):InterestingLinkList {
 		$linksArray = [];
 
 		$notes = substr($notes, strpos($notes, "## Interesting links"));
@@ -111,7 +115,9 @@ class EpisodeFactory {
 					new InterestingLink(
 						$matches["title"],
 						$matches["url"],
-						$matches["person"]
+						$matches["person"],
+						$episodeNumber,
+						$episodeReleaseDate
 					)
 				);
 			}

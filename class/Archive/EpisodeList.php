@@ -1,6 +1,8 @@
 <?php
 namespace OB1\Archive;
 
+use DateTime;
+use DateTimeImmutable;
 use Iterator;
 use OB1\Github\Repo;
 
@@ -14,11 +16,17 @@ class EpisodeList implements Iterator {
 	private array $episodeList;
 	private Repo $repo;
 
-	public function __construct(string $sort = self::SORT_DATE_DESC) {
+	public function __construct(
+		string $sort = self::SORT_DATE_DESC,
+		bool $includeFuture = false
+	) {
 		$this->iteratorIndex = 0;
 		$this->repo = new Repo();
 		$this->episodeList = $this->buildList($this->repo->getTree());
 		$this->sort($sort);
+		if(!$includeFuture) {
+			$this->removeFuture();
+		}
 	}
 
 	public function current():Episode {
@@ -68,7 +76,7 @@ class EpisodeList implements Iterator {
 // the list in any particular order - sort by key.
 		ksort($foundFileList, SORT_NUMERIC);
 
-// Now loop over the found files and build up the list of Episode objects:
+		// Now loop over the found files and build up the list of Episode objects:
 		$episodeFactory = new EpisodeFactory($this->repo);
 		foreach($foundFileList as $episodeNumber => $fileList) {
 			$episode = $episodeFactory->createFromFileList(
@@ -97,5 +105,16 @@ class EpisodeList implements Iterator {
 			);
 			break;
 		}
+	}
+
+	private function removeFuture():void {
+		$now = new DateTimeImmutable();
+
+		$this->episodeList = array_filter(
+			$this->episodeList,
+			fn(Episode $episode) => $episode->getReleaseDate() <= $now
+		);
+
+		$this->episodeList = array_values($this->episodeList);
 	}
 }

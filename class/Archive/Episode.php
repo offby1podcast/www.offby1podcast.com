@@ -31,7 +31,7 @@ class Episode implements BindDataMapper {
 		$markdown = new GithubFlavoredMarkdownConverter();
 
 		return [
-			"number" => str_pad($this->number, 3, "0", STR_PAD_LEFT),
+			"number" => $this->getPaddedNumber(),
 			"title" => $this->title,
 			"release-date" => $this->releaseDate->format("Y-m-d H:i:s"),
 			"release-date-friendly" => $this->releaseDate->format("jS F Y"),
@@ -41,7 +41,39 @@ class Episode implements BindDataMapper {
 		];
 	}
 
+	public function getNumber():int {
+		return $this->number;
+	}
+
+	public function getPaddedNumber():string {
+		return str_pad($this->getNumber(), 3, "0", STR_PAD_LEFT);
+	}
+
+	public function getTitle():string {
+		return $this->title;
+	}
+
+	public function getTitleWithNumber():string {
+		return $this->getPaddedNumber() . " - " . $this->getTitle();
+	}
+
+	public function getUrl():string {
+		return "https://www.offby1podcast.com/" . $this->getPaddedNumber();
+	}
+
+	public function getMp3Url() {
+		return $this->getUrl() . ".mp3";
+	}
+
+	public function getPubDateString():string {
+		return $this->releaseDate->format("D, d M Y H:i:s O");
+	}
+
 	public function getReleaseDate():DateTimeInterface {
 		return $this->releaseDate;
+	}
+
+	public function getLinks():InterestingLinkList {
+		return $this->links;
 	}
 }

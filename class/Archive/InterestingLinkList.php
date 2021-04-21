@@ -8,4 +8,9 @@ class InterestingLinkList {
 	public function __construct(InterestingLink...$linksArray) {
 		$this->linksArray = $linksArray;
 	}
+
+	/** @return InterestingLink[] */
+	public function getArray():array {
+		return $this->linksArray;
+	}
 }
