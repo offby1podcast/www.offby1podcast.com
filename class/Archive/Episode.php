@@ -33,6 +33,8 @@ class Episode implements BindDataMapper {
 
 		return [
 			"number" => $this->getPaddedNumber(),
+			"url" => $this->getUrl(),
+			"mp3-url" => $this->getMp3Url(),
 			"title" => $this->title,
 			"release-date" => $this->releaseDate->format("Y-m-d H:i:s"),
 			"release-date-friendly" => $this->releaseDate->format("jS F Y"),
