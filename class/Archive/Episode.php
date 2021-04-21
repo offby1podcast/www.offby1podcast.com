@@ -92,4 +92,8 @@ class Episode implements BindDataMapper {
 		$markdown = new CommonMarkConverter();
 		return $markdown->convertToHtml($this->showNotes);
 	}
+
+	public function getChapters():ChapterList {
+		return $this->chapters;
+	}
 }

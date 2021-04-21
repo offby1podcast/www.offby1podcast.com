@@ -15,7 +15,7 @@ class EpisodeFactory {
 		$showNotes = $this->repo->getBlobContent($sha);
 		$title = $this->parseTitle($showNotes);
 		$releaseDate = $this->parseReleaseDate($showNotes);
-		$chapterList = $this->parseChapters($showNotes);
+		$chapterList = $this->parseChapters($title, $showNotes);
 		$linkList = $this->parseLinks($showNotes, $episodeNumber, $releaseDate);
 
 		return new Episode(
@@ -50,7 +50,7 @@ class EpisodeFactory {
 
 		$title = $this->parseTitle($showNotes);
 		$releaseDate = $this->parseReleaseDate($showNotes);
-		$chapterList = $this->parseChapters($showNotes);
+		$chapterList = $this->parseChapters($title, $showNotes);
 		$linkList = $this->parseLinks($showNotes, $episodeNumber, $releaseDate);
 
 		return new Episode(
@@ -78,7 +78,7 @@ class EpisodeFactory {
 		}
 	}
 
-	public function parseChapters(string $notes):ChapterList {
+	public function parseChapters(string $title, string $notes):ChapterList {
 		$chaptersArray = [];
 		$previousLine = "";
 
@@ -96,7 +96,7 @@ class EpisodeFactory {
 			}
 		}
 
-		return new ChapterList(...$chaptersArray);
+		return new ChapterList($title, ...$chaptersArray);
 	}
 
 	public function parseLinks(

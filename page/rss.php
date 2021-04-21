@@ -36,6 +36,7 @@ class RssPage extends Page {
 			$itemNode->querySelector("description")->textContent = $episode->getIntro();
 			$itemNode->getElementsByTagName("encoded")->item(0)->textContent = $episode->getShowNotes(true);
 			$itemNode->getElementsByTagName("summary")->item(0)->textContent = $episode->getShowNotes(true);
+			$itemNode->getElementsByTagName("chapters")->item(0)->setAttribute("url", "https://offby1podcast.com/chapters/" . $episode->getPaddedNumber());
 			$channelNode->appendChild($itemNode);
 		}
 
