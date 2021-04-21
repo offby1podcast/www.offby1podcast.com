@@ -3,6 +3,7 @@ namespace OB1\Archive;
 
 use DateTimeInterface;
 use Gt\DomTemplate\BindDataMapper;
+use League\CommonMark\CommonMarkConverter;
 use League\CommonMark\GithubFlavoredMarkdownConverter;
 
 class Episode implements BindDataMapper {
@@ -57,6 +58,10 @@ class Episode implements BindDataMapper {
 		return $this->getPaddedNumber() . " - " . $this->getTitle();
 	}
 
+	public function getIntro():string {
+		return $this->intro;
+	}
+
 	public function getUrl():string {
 		return "https://www.offby1podcast.com/" . $this->getPaddedNumber();
 	}
@@ -75,5 +80,14 @@ class Episode implements BindDataMapper {
 
 	public function getLinks():InterestingLinkList {
 		return $this->links;
+	}
+
+	public function getShowNotes(bool $html = false):string {
+		if(!$html) {
+			return $this->showNotes;
+		}
+
+		$markdown = new CommonMarkConverter();
+		return $markdown->convertToHtml($this->showNotes);
 	}
 }

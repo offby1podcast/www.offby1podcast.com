@@ -5,6 +5,7 @@
 	"require": {
 		"phpgt/webengine": "^3",
 		"league/commonmark": "^1.5.8",
+		"wapmorgan/mp3info": "0.0.5",
 		"ext-json": "*",
 		"ext-curl": "*"
 	},

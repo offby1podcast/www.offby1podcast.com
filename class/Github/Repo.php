@@ -58,18 +58,6 @@ class Repo {
 		}
 	}
 
-	public function getByteLength(string $url):int {
-		$num = substr($url, strrpos($url, "/") + 1);
-		$num = substr($num, 0, strpos($num, "."));
-		$cacheFile = $this->cacheDir . "/$num.length";
-
-		if(!$this->cacheFileValid($cacheFile)) {
-			$this->httpCacheHeader($url, $cacheFile, "content-length");
-		}
-
-		return trim(file_get_contents($cacheFile));
-	}
-
 	private function cacheFileValid(string $cacheFile):bool {
 		if(!file_exists($cacheFile)) {
 			return false;
