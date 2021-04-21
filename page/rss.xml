@@ -56,7 +56,7 @@
 			<itunes:summary>
 				<p>HTML version of the show notes.</p>
 			</itunes:summary>
-			<podcast:chapters url="https://offby1podcast.com/chapters/000" type="application/json"/>
+			<podcast:chapters url="https://www.offby1podcast.com/chapters/000" type="application/json"/>
 
 			<podcast:person email="" href="https://twitter.com/jakelacey2012" role="host">Jake Lacey</podcast:person>
 			<podcast:person email="" href="https://github.com/g105b" role="host">Greg Bowler</podcast:person>
