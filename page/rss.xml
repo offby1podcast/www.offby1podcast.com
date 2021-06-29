@@ -12,14 +12,14 @@
 		<image>
 			<link>https://www.offby1podcast.com</link>
 			<title>Off By 1 Podcast</title>
-			<url>https://www.offby1podcast.com/logo.png</url>
+			<url>https://www.offby1podcast.com/logo.jpg</url>
 		</image>
 
 		<itunes:type>episodic</itunes:type>
 		<itunes:subtitle>Join software engineers Jake and Greg in their weekly catchup call, deep diving into various technology and programming topics.</itunes:subtitle>
 		<itunes:summary>Join software engineers Jake and Greg in their weekly catchup call, deep diving into various technology and programming topics.</itunes:summary>
 		<itunes:author>Jake Lacey, Greg Bowler</itunes:author>
-		<itunes:image href="https://www.offby1podcast.com/logo.png" />
+		<itunes:image href="https://www.offby1podcast.com/logo.jpg" />
 		<itunes:explicit>no</itunes:explicit>
 		<itunes:keywords>programming, programmer, technology, internet, web, web development, software development, software engineering, infosec, catchup</itunes:keywords>
 		<itunes:owner>
@@ -46,7 +46,7 @@
 			</itunes:subtitle>
 			<itunes:duration>00:00</itunes:duration>
 			<itunes:explicit>no</itunes:explicit>
-			<itunes:image href="https://www.offby1podcast.com/logo.png"/>
+			<itunes:image href="https://www.offby1podcast.com/logo.jpg"/>
 			<description>
 				Plain text (markdown) version of the show notes.
 			</description>
