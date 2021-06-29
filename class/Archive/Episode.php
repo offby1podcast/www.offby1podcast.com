@@ -26,7 +26,6 @@ class Episode implements BindDataMapper {
 		);
 		$this->intro = $matches["paragraph"] ?? "Episode $number, $title";
 		$this->content = substr($this->showNotes, strpos($this->showNotes, "##"));
-		$this->content = str_replace("(img/", "(https://raw.githubusercontent.com/offby1podcast/archive/master/img/", $this->content);
 	}
 
 	public function bindDataMap():array {
